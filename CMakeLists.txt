@@ -45,7 +45,6 @@ set(RoutingLibApiFiles
     ${PROJECT_SOURCE_DIR}/include/maidsafe/routing/compile_time_mapper.h
     ${PROJECT_SOURCE_DIR}/include/maidsafe/routing/node_info.h
     ${PROJECT_SOURCE_DIR}/include/maidsafe/routing/routing_node.h
-    ${PROJECT_SOURCE_DIR}/include/maidsafe/routing/serialisation.h
     ${PROJECT_SOURCE_DIR}/include/maidsafe/routing/types.h
     )
 source_group("Routing API Files" FILES ${RoutingLibApiFiles})
