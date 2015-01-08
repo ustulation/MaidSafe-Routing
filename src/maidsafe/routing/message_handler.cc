@@ -72,13 +72,7 @@ void MessageHandler::HandleMessage(Connect connect) {
         auto data_signature(asymm::Sign(data, keys_.private_key));
         MessageHeader header;
         header.message_id = RandomUint32();
-
-        // :spandan- This doesn't compile .. Modified this .. Pls verify if correct
-//        header.signature = boost::optional<rsa::Signature>(data_signature);
-        std::string data_signature_str(data_signature.begin(), data_signature.end());
-        header.signature = boost::optional<rsa::Signature>(data_signature_str);
-
-
+        header.signature = boost::optional<rsa::Signature>(data_signature);
         header.source = SourceAddress(connection_manager_.OurId());
         header.destination = DestinationAddress(connect.requester_id);
         header.checksums.push_back(crypto::Hash<crypto::SHA1>(data));
